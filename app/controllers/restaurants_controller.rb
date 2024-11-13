@@ -12,16 +12,16 @@ def new
   @restaurant = Restaurant.new
 end
 
+
 def create
-  def create
-    @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant), notice: "Restaurant created successfully."
-    else
-      render :new, status: :unprocessable_entity
-    end
+  @restaurant = Restaurant.new(restaurant_params)
+  if @restaurant.save
+    redirect_to restaurant_path(@restaurant), notice: "Restaurant created successfully."
+  else
+    render :new, status: :unprocessable_entity
   end
 end
+
 
 
 private
